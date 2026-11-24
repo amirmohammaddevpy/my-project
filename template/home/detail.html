@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ project.name }}
+{% endblock title %}
+
+{% block content %}
+<main class="container">
+
+  <section class="project-detail" style="max-width:900px; margin:50px auto; padding:0 16px;">
+
+    <!-- Project Name -->
+    <h1 class="project-title" style="
+        font-size:2.6rem;
+        font-weight:700;
+        margin-bottom:32px;
+        background: linear-gradient(90deg, #ff6b6b, #ff9a9a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 15px rgba(255,107,107,0.7);
+        transition: all 0.3s ease;
+        text-align:center;
+    ">
+      {{ project.name }}
+    </h1>
+
+    <!-- Project Image -->
+    <div class="project-image" style="margin-bottom:40px; border-radius:16px; overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.6);">
+      <img src="{{ project.image.url }}" alt="{{ project.name }}" style="width:100%; display:block; object-fit:cover; transition: transform 0.5s ease, filter 0.5s ease;">
+    </div>
+
+    <!-- Links as raw URLs -->
+    <div class="project-links" style="margin-bottom:32px; display:flex; flex-direction:column; gap:12px;">
+     <span>Website:</span><a href="{{ project.link_site }}" target="_blank" rel="noopener noreferrer" style="
+          color:#66ccff;
+          font-weight:500;
+          text-decoration:underline;
+          transition: all 0.3s ease;
+          word-break: break-word;
+      ">{{ project.link_site }}</a>
+
+      <span>Link Project:</span><a href="{{ project.link_project }}" target="_blank" rel="noopener noreferrer" style="
+          color:#ff9a9a;
+          font-weight:500;
+          text-decoration:underline;
+          transition: all 0.3s ease;
+          word-break: break-word;
+      ">{{ project.link_project }}</a>
+    </div>
+
+    <!-- Description -->
+<div class="project-desc" style="white-space: pre-line;">
+    {{ project.descriptions }}
+</div>
+
+
+  </section>
+
+</main>
+
+<!-- Hover & Animation Effects -->
+<style>
+  body {
+    background:#0e0e0e;
+  }
+
+  .project-image img:hover {
+    transform: scale(1.06) rotate(-0.3deg);
+    filter: brightness(1.1) contrast(1.05);
+  }
+
+  .project-links a:hover {
+    color:#ffffff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .project-title {
+      font-size:2rem !important;
+    }
+    .project-links {
+      gap:10px;
+    }
+    .project-desc p {
+      font-size:1rem;
+    }
+  }
+</style>
+{% endblock content %}

@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me | Amir Mohammad Barabadi{% endblock %}
+
+{% block css %}
+<style>
+  .about-hero {
+    padding: 56px 48px;
+    margin-bottom: 28px;
+    background: linear-gradient(135deg, #1a1a1a, #222);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 12px 32px var(--shadow);
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .about-role {
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .about-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 22px;
+  }
+
+  .about-section h2 {
+    color: var(--accent);
+    font-size: 1.15rem;
+    letter-spacing: .08em;
+    margin-bottom: 18px;
+  }
+
+  .about-section p {
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .about-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .skill-item {
+    background: #222;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: var(--muted);
+    transition: .25s ease;
+  }
+
+  .skill-item:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+  }
+
+  .project-card {
+    background: #222;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 16px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 9px;
+  }
+
+  .project-card p {
+    color: var(--muted);
+  }
+
+  .project-status {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 10px;
+    color: var(--accent);
+    background: rgba(255, 107, 107, .1);
+    border: 1px solid rgba(255, 107, 107, .25);
+    border-radius: 20px;
+    font-size: .78rem;
+  }
+
+  .about-closing {
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 36px 25px;
+    }
+
+    .about-section {
+      padding: 24px 20px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-role {
+      font-size: .95rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+  <p class="eyebrow">About Me</p>
+  <h1>Hi, I'm Amir Mohammad Barabadi.</h1>
+  <p class="about-role">
+    Python Backend Developer | Django Developer | Computer Science Student
+  </p>
+</section>
+
+<section class="about-section">
+  <h2>WHO I AM</h2>
+
+  <p>
+    I'm a Computer Science student and Python Backend Developer with a strong
+    passion for building practical, scalable, and reliable software solutions.
+  </p>
+
+  <p>
+    My journey in programming started with Python, where I discovered my
+    interest in problem-solving, logical thinking, and turning ideas into
+    functional applications. Over time, I focused on backend development and
+    began building web applications using Django and Django REST Framework.
+  </p>
+
+  <p>
+    I enjoy working behind the scenes of applications, where business logic,
+    databases, APIs, authentication, and system architecture come together to
+    create reliable and efficient software.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2>WHAT I DO</h2>
+
+  <p>
+    My primary focus is backend development. I use Python and Django to build
+    web applications, develop RESTful APIs, implement authentication systems,
+    work with databases, and create features that solve real-world problems.
+  </p>
+
+  <div class="skills-grid">
+    <div class="skill-item">Python</div>
+    <div class="skill-item">Django</div>
+    <div class="skill-item">Django REST Framework</div>
+    <div class="skill-item">RESTful API Development</div>
+    <div class="skill-item">PostgreSQL</div>
+    <div class="skill-item">SQLite</div>
+    <div class="skill-item">Git &amp; GitHub</div>
+    <div class="skill-item">HTML, CSS &amp; JavaScript</div>
+    <div class="skill-item">Linux &amp; Command Line</div>
+  </div>
+</section>
+
+
+<section class="about-section">
+  <h2>BEYOND BACKEND DEVELOPMENT</h2>
+
+  <p>
+    My interests go beyond application development. I'm particularly
+    interested in Linux systems, server administration, deployment, networking,
+    and cybersecurity.
+  </p>
+
+  <p>
+    I want to understand how software works not only at the application level
+    but also at the infrastructure level: how applications are deployed, how
+    servers handle requests, how databases operate, and how systems can be
+    made more secure and efficient.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2>MY APPROACH</h2>
+
+  <p>
+    I believe becoming a good developer requires more than simply knowing
+    programming languages and frameworks.
+  </p>
+
+  <p>
+    I value logical thinking, problem-solving, clean and maintainable code,
+    understanding concepts instead of blindly copying solutions, and
+    continuous learning through practical experimentation.
+  </p>
+
+  <p>
+    I don't claim to know everything. I'm constantly learning, improving my
+    technical skills, and challenging myself with more complex problems.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2>MY GOALS</h2>
+
+  <p>
+    My long-term goal is to become a skilled Backend Engineer with a deep
+    understanding of software architecture, databases, Linux, networking,
+    and server infrastructure.
+  </p>
+
+  <p>
+    I'm interested in challenging projects, collaborating with talented
+    developers, and contributing to software products that solve real problems.
+  </p>
+
+  <p class="about-closing">
+    I believe great software is built through curiosity, discipline,
+    logical thinking, and continuous improvement.
+  </p>
+</section>
+
+{% endblock %}

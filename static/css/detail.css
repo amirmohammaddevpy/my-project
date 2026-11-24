@@ -1,0 +1,162 @@
+:root {
+  --bg: #0e0e0e;        /* پس‌زمینه اصلی */
+  --card-bg: #1a1a1a;   /* پس‌زمینه کارت‌ها / container */
+  --text: #f1f1f1;
+  --muted: #9a9a9a;
+  --accent: #ff6b6b;
+  --border: #2a2a2a;
+  --shadow: rgba(0,0,0,0.6);
+}
+
+/* ======== Body & Container ======== */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.project-detail {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* ======== Project Title ======== */
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--accent);
+  text-align: center;
+  text-shadow: 0 2px 8px var(--shadow);
+}
+
+/* ======== Project Image ======== */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.08) rotate(1deg);
+  filter: brightness(1.1);
+}
+
+/* Hover overlay effect */
+.project-image::after {
+  content: "View Project";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.3rem;
+  background: var(--accent);
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.project-image:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ======== Description ======== */
+.project-desc p {
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 1rem;
+  margin-bottom: 32px;
+  padding: 0 12px;
+  text-align: justify;
+}
+
+/* ======== Links ======== */
+.project-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.project-links .btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--accent), #ff9a9a);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.project-links .btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 12px;
+}
+
+.project-links .btn:hover::before {
+  transform: scaleX(1);
+}
+
+.project-links .btn:hover {
+  color: #0e0e0e;
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+/* ======== Video ======== */
+.project-video {
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.project-video video {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-desc p {
+    font-size: 0.95rem;
+  }
+
+  .project-links .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
